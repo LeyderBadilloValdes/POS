@@ -1,0 +1,65 @@
+<!-- myapp/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Incluir Bootstrap desde el CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f4f4f9;
+            color: #333;
+        }
+        .custom-image {
+            width: 300px;
+            height: auto;
+        }
+        .hero-section {
+            background: #04162b;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .card-container {
+            max-width: 400px;
+            margin: 30px auto;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .card-text {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección de bienvenida -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Bienvenido a la Página de Inicio</h1>
+            <p class="lead">Esta es la página principal de tu sitio.</p>
+        </div>
+    </div>
+    
+    <!-- Contenedor para la tarjeta -->
+    <div class="container">
+        <div class="card card-container shadow-lg">
+            <div class="card-body text-center">
+                <!-- Asegúrate de cargar la etiqueta 'static' -->
+                {% load static %}
+                <!-- Imagen del inicio con tamaño personalizado -->
+                <img src="{% static 'imageindex.png' %}" alt="ImageIndex" class="custom-image rounded-circle mb-3">
+                <h5 class="card-title">Tienda</h5>
+                <p class="card-text">Sumérgete en la maravilloso con nuestra diversos productos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS y Popper.js desde el CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

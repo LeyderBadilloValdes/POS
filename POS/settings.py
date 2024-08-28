@@ -51,10 +51,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'POS.urls'
 
+# myproject/settings.py
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +68,20 @@ TEMPLATES = [
         },
     },
 ]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+# Establecer la ruta para los archivos estáticos
+STATIC_URL = '/static/'
+
+# (Opcional) Establecer la ruta completa donde se almacenarán los archivos estáticos en producción
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# Si estás en producción, asegúrate de que STATIC_ROOT esté definido para recoger los archivos estáticos
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 WSGI_APPLICATION = 'POS.wsgi.application'
 
@@ -103,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -111,11 +127,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
